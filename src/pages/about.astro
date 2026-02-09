@@ -1,8 +1,6 @@
 ---
 import '../styles/global.css';
-import Navigation from "../components/Navigation.astro";
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About Me";
 const identity = {
   firstName: "Sarah",
@@ -43,7 +41,7 @@ const textCase = "uppercase";
     </style>
   </head>
   <body>
-    <Header/>
+    <BaseLayout pageTitle={pageTitle}>
     <p>Here are a few facts about me:</p>
     <ul>
       <li>My name is {identity.firstName}.</li>
@@ -74,7 +72,7 @@ const textCase = "uppercase";
         <p>My goal is not 3 days.</p>
       )
     }
-   <Footer/>
+    </BaseLayout>
    <script>
     import "../scripts/menu.js";
   </script>
